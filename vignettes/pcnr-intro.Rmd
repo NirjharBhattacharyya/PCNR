@@ -1,0 +1,25 @@
+---
+title: "PCNR: Protein Contact Networks"
+author: "NIRJHAR BHATTACHARYYA"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{PCNR: Protein Contact Networks}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+library(PCNR)
+```
+
+## Build a PCN from a PDB ID
+
+```{r}
+pcn <- try(pcn_from_pdb("2K0A", chain = "A", atom = "CA", cutoff = 7), silent = TRUE)
+if (!inherits(pcn, "try-error")) {
+  plot_pcn(pcn$graph)
+  head(pcn_metrics(pcn))
+  pcn_summary(pcn)
+}
+```
