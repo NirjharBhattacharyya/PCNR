@@ -1,0 +1,30 @@
+Package: PCNR
+Type: Package
+Title: Protein Contact Networks in R
+Version: 0.1.1
+Authors@R: c(
+    person(given = "NIRJHAR BHATTACHARYYA", family = "", role = c("aut", "cre"),
+           email = "nirjhar.suvo.97@gmail.com"),
+    person(given = "PCNR", family = "Contributors", role = "ctb")
+ )
+Description: Build residue-level protein contact networks from PDB files or IDs,
+    compute adjacency based on distance cutoffs, and analyze/visualize networks.
+    Supports batch processing from a tabular file with columns PDB, CHAIN, ATOM, CUTOFF.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 4.1.0)
+Imports:
+    bio3d (>= 2.4),
+    igraph (>= 1.3),
+    stats,
+    utils,
+    grDevices,
+    graphics
+Suggests:
+    testthat (>= 3.1.0),
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+Config/testthat/edition: 3
+RoxygenNote: 7.3.2
+
